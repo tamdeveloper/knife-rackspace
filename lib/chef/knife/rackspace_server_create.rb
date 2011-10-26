@@ -193,7 +193,7 @@ class Chef
         bootstrap.name_args = [public_dns_name(server)]
         bootstrap.config[:run_list] = config[:run_list]
         bootstrap.config[:ssh_user] = config[:ssh_user] || "root"
-        bootstrap.config[:ssh_password] = server.password
+        bootstrap.config[:ssh_password] = config[:ssh_password] || server.password
         bootstrap.config[:identity_file] = config[:identity_file]
         bootstrap.config[:chef_node_name] = config[:chef_node_name] || server.id
         bootstrap.config[:prerelease] = config[:prerelease]
